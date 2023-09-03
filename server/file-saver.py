@@ -1,6 +1,8 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import parse_qsl, urlparse
 
+SERVER_LOCAL_PORT = 8000					# server's port for Fitbit connection
+
 class RequestHandler(BaseHTTPRequestHandler):
   def do_GET(self):
     #print('do_GET')
@@ -27,6 +29,6 @@ class RequestHandler(BaseHTTPRequestHandler):
     self.send_header("Content-Type", "application/json")
     self.end_headers()
 
-server = HTTPServer(("0.0.0.0", 8000), RequestHandler)
+server = HTTPServer(("0.0.0.0", SERVER_LOCAL_PORT), RequestHandler)
 print('Server running')
 server.serve_forever()

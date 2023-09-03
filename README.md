@@ -1,4 +1,4 @@
-# fitbit-file-saver
+# Fitbit File Saver
 A Python server that saves files from a Fitbit OS app.
 
 A phone-based server is used to receive the files. This avoids the need to use `https`, which can be difficult to set up on a LAN.
@@ -18,7 +18,7 @@ This repository consists of two main components:
 * Install the app onto a watch (although it can also run on the Fitbit Simulator).
 #### Server
 * Install a Python 3.5+ execution environment on the phone on which the Fitbit companion component (*ie*, Fitbit mobile app) will run. For Android, you can use [pydroid 3](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3). For iOS, [Pythonista 3](http://omz-software.com/pythonista/index.html) might work (untested).
-* In `file-saver.py`, set the port specified in the `HTTPServer` call to match that specified in `companion/index.js`’s `httpURL`.
+* In `file-saver.py`, set `SERVER_LOCAL_PORT` to match that specified in `companion/index.js`’s `httpURL`.
 * Copy `server/file-saver.py` to a directory on your phone from which Python can run it.
 
 ### Start-up
